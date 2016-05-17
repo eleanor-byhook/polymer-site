@@ -46,12 +46,6 @@ module.exports = {
     dist: dist
   },
 
-  styles: {
-    src: './styles/**/*',
-    entry: './styles/index.styl',
-    dist: dist + '/css/'
-  },
-
   vendor: {
     src: './app/vendor/**/*.js',
     name: 'vendor.js',
