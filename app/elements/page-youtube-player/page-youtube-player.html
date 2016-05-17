@@ -1,0 +1,56 @@
+<!--
+    `page-youtube-player` is a wrapper around the google-youtube player that
+    hides all properties except video-id, called "id"
+
+    Example:
+
+      <page-youtube-player id="AJebsiqoa"></page-youtube-player>
+
+      @element page-youtube-pplayer
+      @demo demo.html
+  -->
+
+
+<link rel="import" href="../../bower_components/google-youtube/google-youtube.html">
+
+<dom-module id="page-youtube-player">
+    <template>
+
+    <style include="shared-styles">
+      :host {
+        position: relative;
+        display: block;
+        margin: 2% 0;
+      }
+
+    </style>
+
+    <google-youtube
+      video-id={{id}}
+      chromeless="true"
+      fluid="true">
+    </google-youtube>
+
+  </template>
+
+  <script>
+    (function () {
+      'use strict';
+
+      Polymer({
+        is: 'page-youtube-player',
+
+        properties: {
+          /** ID of the video on youtube. Alphanumeric and typically eleven
+          characters long (e.g. 'JGNiafLl0iA') */
+          id: {
+            type: String,
+            notify: true
+          }
+        }
+      });
+
+    })();
+  </script>
+
+</dom-module>
