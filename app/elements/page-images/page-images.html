@@ -1,0 +1,73 @@
+<!--
+    `page-images` is a wrapper around a set of polymer's iron-flex-layout which
+    wraps around iron-images.
+    The default layout is a two-row, two-column grid.  Mobile browsers revert to
+    a single column layout.
+
+    Example:
+
+      <page-images></page-images>
+
+      @element page-images
+      @demo demo.html
+  -->
+
+
+<link rel="import" href="../../bower_components/iron-image/iron-image.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../../bower_components/iron-flex-layout/iron-flex-layout-classes.html">
+
+<dom-module id="page-images">
+
+    <template>
+
+      <style include="iron-flex iron-flex-alignment shared-styles">
+
+        :host {
+        }
+
+        .container {
+          @apply(--layout-horizontal)
+          display: block;
+          height: 100%;
+          min-height: 100%;
+          max-height: 100%;
+
+        }
+
+        iron-image {
+          @apply(--layout-flex);
+          box-sizing: border-box;
+          position: relative;
+          height: 100%;
+          max-height: 100%;
+          border: 8px solid;
+        }
+
+      </style>
+
+      <iron-flex-layout>
+        <div class="container">
+          <iron-image src="http://lorempixel.com/image_output/city-q-g-1440-1091-7.jpg"></iron-image>
+          <iron-image src="http://lorempixel.com/image_output/city-q-g-1440-1091-7.jpg"></iron-image>
+        </div>
+        <div class="container">
+          <iron-image src="http://lorempixel.com/image_output/city-q-g-1440-1091-7.jpg"></iron-image>
+          <iron-image src="http://lorempixel.com/image_output/city-q-g-1440-1091-7.jpg"></iron-image>
+        </div>
+      </iron-flex-layout>
+
+  </template>
+
+  <script>
+    (function () {
+      'use strict';
+
+      Polymer({
+        is: 'page-images',
+      });
+
+    })();
+  </script>
+
+</dom-module>
