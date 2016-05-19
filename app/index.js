@@ -1,7 +1,5 @@
 'use strict';
 
-import behaviors from './behaviors';
-
 // Sets app default base URL
 let baseUrl = '/';
 if (window.location.port === '') {  // if production
@@ -21,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Listen for template bound event to know when bindings
   // have resolved and content has been stamped to the page
   main.addEventListener('dom-change', function() {
-    console.log('Our app is ready to rock!');
+    // console.log('Our app is ready to rock!');
   });
 
   // See https://github.com/Polymer/polymer/issues/1381
@@ -31,4 +29,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-export { behaviors, baseUrl };
+export { baseUrl };
