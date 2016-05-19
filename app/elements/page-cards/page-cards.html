@@ -23,7 +23,7 @@
         flex-wrap: wrap;
         justify-content: center;
         margin: 2% 0;
-        padding: 0 10%;
+        padding: 0 5%;
         height: 100%;
         background-color: rgb(2,8,16);
       }
@@ -33,7 +33,6 @@
         flex-wrap: wrap;
         justify-content: center;
         margin-bottom: 5%;
-        height: 36%;
       }
 
       paper-card {
@@ -41,8 +40,11 @@
         --paper-card-header-color: white;
         --paper-card-background-color: black;
         border-radius: 2px;
-        margin: 0 20px;
-        width: 30%;
+        margin: 0 2%;
+        min-height: 200px;
+        max-height: 300px; /*desktop*/
+        border: 1px solid blue;
+        width: 29%;
       }
 
       #page-header {
@@ -61,11 +63,16 @@
       }
 
       .card-header {
-        font-size: 30px;
+        font-size: 26px;
       }
 
       .text-container {
-        margin: 21px;
+        box-sizing: border-box;
+        min-height: 126px;
+        max-height: 126px;
+        width: 100%;
+        padding: 21px;
+        background-color: black;
       }
 
       .card-byline {
@@ -84,23 +91,62 @@
 
       iron-image {
         --iron-image-width: 100%;
+        height: 75%;
       }
 
       #cta {
         width: 100%;
         height: 10%;
         text-align: center;
-        margin-bottom: 5%;
+        margin-top: 5%;
       }
-
 
       #TryYTRed {
         color: white;
+        font-size: 23px;
         background-color: rgb(190,9,24);
         padding: 15px;
         border: none;
+        width: 270px;
+        height: 60px;
       }
 
+      @media screen and (min-width: 480px) {
+        paper-card {
+          border: 3px solid white;
+        }
+
+      }
+      @media screen and (min-width: 600px) {
+        paper-card {
+          border: 3px solid white;
+        }
+      }
+      @media screen and (max-width: 800px) {
+        paper-card {
+          border: 3px solid yellow;
+        }
+      }
+      @media screen and (min-width: 960px) {
+        /*TODO: make cards part of a slider container */
+        paper-card {
+          border: 3px solid orange;
+        }
+      }
+      @media screen and (min-width: 1024px) {
+        
+        paper-card {
+          border: 3px solid red;
+        }
+      }
+      @media screen and (min-width: 1280px) {
+        .card-header {
+          font-size: 30px;
+        }
+        paper-card {
+          border: 3px solid purple;
+        }
+      }
 
     </style>
 
