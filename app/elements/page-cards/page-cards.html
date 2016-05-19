@@ -1,0 +1,154 @@
+<!--
+    `page-cards` is a wrapper around the google-youtube player that
+    hides all properties except video-id, called "id"
+
+    Example:
+
+      <page-cards id="AJebsiqoa"></page-cards>
+
+      @element page-youtube-pplayer
+      @demo demo.html
+  -->
+
+
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../bower_components/iron-image/iron-image.html">
+
+<dom-module id="page-cards">
+    <template>
+
+    <style>
+      :host {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 2% 0;
+        padding: 0 10%;
+        height: 100%;
+        background-color: rgb(2,8,16);
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 5%;
+        height: 33%;
+      }
+
+      paper-card {
+        box-sizing: border-box;
+        --paper-card-header-color: white;
+        --paper-card-background-color: black;
+        --paper-card-content: { padding: 0; };
+        border-radius: 2px;
+        margin: 0 20px;
+        width: 30%;
+      }
+
+      #page-header {
+       width: 100%; 
+       height: 10%;
+       text-align: center;
+       letter-spacing: 0.5px;
+       margin-bottom: 0;
+       margin-top: 8%;
+       background-color: transparent;
+      }
+
+      #tube {
+        background-color: rgb(190,9,24);
+        border-radius: 15px;
+        padding: 5px;
+      }
+
+      .card-header {
+        font-size: 30px;
+      }
+
+      .text-container {
+        padding: 21px 30px 0 30px;
+      }
+
+      .card-byline {
+        font-size: 14px;
+        color: gray;
+      }
+
+      .red {
+        display: inline-block;
+        margin-top: 20px;
+        color: white;
+        background-color: rgb(190,9,24);
+        padding: 2px 5px;
+        border-radius: 3px;
+      }
+
+      iron-image {
+        --iron-image-width: 100%;
+      }
+
+      #cta {
+        width: 100%;
+        height: 10%;
+        text-align: center;
+        margin-bottom: 5%;
+      }
+
+
+      #TryYTRed {
+        color: white;
+        background-color: rgb(190,9,24);
+        padding: 15px;
+        border: none;
+      }
+
+
+    </style>
+
+    <div id="page-header">
+      <h1>You<span id="tube">Tube</span> Red</h1>
+      <p>Watch more youtube please</p>
+    </div>
+
+    <div class="container">
+      <paper-card>
+        <iron-image src="../../images/FPO-page-header.png"></iron-image>
+        <div class="text-container">
+          <div class="card-header">Lazer Cat</div>
+          <div class="card-byline">By Rooster Teeth</div>
+          <div class="red">Red</div>
+        </div>
+      </paper-card>
+
+      <paper-card>
+        <iron-image src="../../images/FPO-page-header.png"></iron-image>
+        <div class="card-header">Scare MewdiePie</div>
+      </paper-card>
+
+      <paper-card>
+        <iron-image src="../../images/FPO-page-header.png"></iron-image>
+        <div class="card-header">Kitten Academy</div>
+      </paper-card>
+    </div>
+
+    <div id="cta">
+      <button id="TryYTRed">TRY YOUTUBE RED</button>
+      <p>Learn more about YouTubeRed</p>
+    </div>
+
+  </template>
+
+  <script>
+    (function () {
+      'use strict';
+
+      Polymer({
+        is: 'page-cards',
+
+      });
+
+    })();
+  </script>
+
+</dom-module>
