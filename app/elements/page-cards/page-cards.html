@@ -1,9 +1,11 @@
 <!--
-    `page-cards` is a wrapper around three paper-cards 
+    `page-cards` is a wrapper around three `paper-cards` that each include an
+    `iron-image`. The whole element also contains one header and a CTA section
+    with a button and line of text. 
 
     Example:
 
-      <page-cards></page-cards>
+      `<page-cards></page-cards>`
 
       @element page-cards
       @demo demo.html
@@ -19,6 +21,7 @@
     <style>
       :host {
         display: flex;
+        color: white;
         flex-wrap: wrap;
         justify-content: center;
         align-content: center;
@@ -34,7 +37,6 @@
         justify-content: center;
         margin-bottom: 5%;
       }
-
       paper-card {
         box-sizing: border-box;
         --paper-card-header-color: white;
