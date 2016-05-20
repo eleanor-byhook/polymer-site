@@ -1,0 +1,209 @@
+<!--
+    `page-cards` is a wrapper around three `paper-cards` that each include an
+    `iron-image`. The whole element also contains one header and a CTA section
+    with a button and line of text. 
+
+    Example:
+
+      `<page-cards></page-cards>`
+
+      @element page-cards
+      @demo demo.html
+  -->
+
+
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../bower_components/iron-image/iron-image.html">
+
+<dom-module id="page-cards">
+    <template>
+
+    <style>
+      :host {
+        display: flex;
+        color: white;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        margin: 2% 0;
+        padding: 0 5%;
+        height: 100%;
+        background-color: rgb(2,8,16);
+      }
+
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 5%;
+      }
+      paper-card {
+        box-sizing: border-box;
+        --paper-card-header-color: white;
+        --paper-card-background-color: black;
+        border-radius: 2px;
+        margin: 0 2%;
+        min-height: 200px;
+        max-height: 300px; /*desktop*/
+        border: 1px solid blue;
+        width: 29%;
+      }
+
+      #page-header {
+        width: auto;
+       height: 116px; 
+       padding-bottom: 0;
+       text-align: center;
+       letter-spacing: 0.5px;
+       margin-bottom: 4%;
+       background-color: transparent;
+      }
+
+      #tube {
+        background-color: rgb(190,9,24);
+        border-radius: 15px;
+        padding: 5px;
+      }
+
+      .card-header {
+        font-size: 26px;
+      }
+
+      .text-container {
+        box-sizing: border-box;
+        min-height: 126px;
+        max-height: 126px;
+        width: 100%;
+        padding: 21px;
+        background-color: black;
+      }
+
+      .card-byline {
+        font-size: 14px;
+        color: gray;
+      }
+
+      .red {
+        display: inline-block;
+        margin-top: 20px;
+        color: white;
+        background-color: rgb(190,9,24);
+        padding: 2px 5px;
+        border-radius: 3px;
+      }
+
+      iron-image {
+        --iron-image-width: 100%;
+        height: 75%;
+      }
+
+      #cta {
+        width: 100%;
+        height: 10%;
+        text-align: center;
+        margin-top: 10%;
+      }
+
+      #TryYTRed {
+        color: white;
+        font-size: 23px;
+        background-color: rgb(190,9,24);
+        padding: 15px;
+        border: none;
+        width: 270px;
+        height: 60px;
+      }
+
+      @media screen and (min-width: 480px) {
+        paper-card {
+          border: 3px solid white;
+        }
+
+      }
+      @media screen and (min-width: 600px) {
+        paper-card {
+          border: 3px solid white;
+        }
+      }
+      @media screen and (max-width: 800px) {
+        paper-card {
+          border: 3px solid yellow;
+        }
+      }
+      @media screen and (min-width: 960px) {
+        /*TODO: make cards part of a slider container */
+        paper-card {
+          border: 3px solid orange;
+        }
+      }
+      @media screen and (min-width: 1024px) {
+        
+        paper-card {
+          border: 3px solid red;
+        }
+      }
+      @media screen and (min-width: 1280px) {
+        .card-header {
+          font-size: 30px;
+        }
+        paper-card {
+          border: 3px solid purple;
+        }
+      }
+
+    </style>
+
+    <div id="page-header">
+      <h1>You<span id="tube">Tube</span> Red</h1>
+      <p>Watch more youtube please</p>
+    </div>
+
+    <div class="container">
+      <paper-card>
+        <iron-image src="../../images/FPO-page-header.png"></iron-image>
+        <div class="text-container">
+          <div class="card-header">Lazer Cat</div>
+          <div class="card-byline">By Rooster Teeth</div>
+          <div class="red">Red</div>
+        </div>
+      </paper-card>
+
+      <paper-card>
+        <iron-image src="../../images/FPO-page-header.png"></iron-image>
+         <div class="text-container">
+          <div class="card-header">Scare MewdiePie</div>
+          <div class="card-byline">By MewDiePie</div>
+          <div class="red">Red</div>
+        </div>
+      </paper-card>
+
+      <paper-card>
+        <iron-image src="../../images/FPO-page-header.png"></iron-image>
+          <div class="text-container">
+            <div class="card-header">Kitten Academy</div>
+            <div class="card-byline">By PrankVsPrank</div>
+            <div class="red">Red</div>
+          </div>
+      </paper-card>
+    </div>
+
+    <div id="cta">
+      <button id="TryYTRed">TRY YOUTUBE RED</button>
+      <p>Learn more about YouTubeRed</p>
+    </div>
+
+  </template>
+
+  <script>
+    (function () {
+      'use strict';
+
+      Polymer({
+        is: 'page-cards',
+
+      });
+
+    })();
+  </script>
+
+</dom-module>
